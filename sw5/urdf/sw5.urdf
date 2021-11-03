@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="sw5">
+	<link name="base_footprint">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.001 0.001 0.001" />
+                </geometry>
+            </visual>
+        </link>
+        <gazebo reference="base_footprint">
+            <turnGravityOff>false</turnGravityOff>
+        </gazebo>
+
+        <joint name="base_footprint_joint" type="fixed">
+            <origin xyz="0 0 0.297" rpy="0 0 0" />        
+            <parent link="base_footprint"/>
+            <child link="base_link" />
+        </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0383023712403095 -0.0437317199924381 0.588985188553231"
+        rpy="0 0 0" />
+      <mass
+        value="1.73142592952" />
+      <inertia
+        ixx="762.703138818029"
+        ixy="-70.4565792419025"
+        ixz="-27.8150344559165"
+        iyy="386.536579910933"
+        iyz="-47.3856450616858"
+        izz="733.348011239194" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-0.00855218437734295 -0.000215947111778525 -0.0232969271778171"
+        rpy="0 0 0" />
+      <mass
+        value="9.1090791552902" />
+      <inertia
+        ixx="0.196346756691768"
+        ixy="9.71138613000266E-05"
+        ixz="-0.00773055138956243"
+        iyy="0.192856777781797"
+        iyz="0.000216205447222131"
+        izz="0.0444245385646609" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.6 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="-0.425 0.57 0.1335"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.7"
+      upper="0.7"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="3.85107602907504" />
+      <inertia
+        ixx="0.0256871584984341"
+        ixy="9.49863985026229E-17"
+        ixz="-4.01653580892973E-18"
+        iyy="0.014648771137846"
+        iyz="-3.50756338770281E-32"
+        izz="0.014648771137846" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="continuous">
+    <origin
+      xyz="0.003 0 -0.186"
+      rpy="0 0 0" />
+    <parent
+      link="link5" />
+    <child
+      link="link1" />
+    <axis
+      xyz="-1 0 0" />
+<limit effort="10000" velocity="1000" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="0.0085522035091305 0.000215918564818507 -0.0232968554512045"
+        rpy="0 0 0" />
+      <mass
+        value="9.10907597533542" />
+      <inertia
+        ixx="0.196346646119776"
+        ixy="9.71234675192921E-05"
+        ixz="0.00773057931498471"
+        iyy="0.192856644752228"
+        iyz="-0.000216243546921578"
+        izz="0.0444245683812515" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.6 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="0.425 0.57 0.1335"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.7"
+      upper="0.7"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="3.85107602907504" />
+      <inertia
+        ixx="0.0256871584984341"
+        ixy="9.67550076512508E-17"
+        ixz="-3.12984869371643E-18"
+        iyy="0.014648771137846"
+        iyz="-2.76468622077682E-32"
+        izz="0.014648771137846" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="continuous">
+    <origin
+      xyz="-0.003 0 -0.186"
+      rpy="0 0 0" />
+    <parent
+      link="link6" />
+    <child
+      link="link2" />
+    <axis
+      xyz="-1 0 0" />
+<limit effort="10000" velocity="1000" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.0283915349256037 -7.80766484798079E-09 0"
+        rpy="0 0 0" />
+      <mass
+        value="16.7890857367422" />
+      <inertia
+        ixx="0.13535034711202"
+        ixy="9.41328414285563E-08"
+        ixz="-2.78581026895213E-15"
+        iyy="0.132941775874745"
+        iyz="3.77575702835412E-17"
+        izz="0.132924208864018" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="continuous">
+    <origin
+      xyz="-0.4815 -0.57 -0.012"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link3" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="-0.028391534925604 7.8076651810477E-09 1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="16.7890857367421" />
+      <inertia
+        ixx="0.135350347112019"
+        ixy="9.41328420204971E-08"
+        ixz="2.80296919073691E-15"
+        iyy="0.132941775874745"
+        iyz="-5.36969523482869E-18"
+        izz="0.132924208864018" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sw5/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="continuous">
+    <origin
+      xyz="0.4815 -0.57 -0.012"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link4" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+
+
+        <gazebo reference="base_link">
+            <material>Gazebo/Blue</material>
+        </gazebo>
+        <gazebo reference="link1">
+            <material>Gazebo/Black</material>
+        </gazebo>
+        <gazebo reference="link2">
+            <material>Gazebo/Black</material>
+        </gazebo>
+        <gazebo reference="link3">
+            <material>Gazebo/Black</material>
+        </gazebo>
+        <gazebo reference="link4">
+            <material>Gazebo/Black</material>
+        </gazebo>
+	<gazebo reference="link5">
+            <material>Gazebo/Red</material>
+        </gazebo>
+	<gazebo reference="link6">
+            <material>Gazebo/Red</material>
+        </gazebo>
+
+
+
+  <transmission name="joint1_transmission" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint1_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="joint2_transmission" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint2_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+  <transmission name="joint5_transmission" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint5_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="joint6_transmission" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint6_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+        <!-- controller -->
+	<gazebo>
+  	<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    	<robotNamespace>/racecar</robotNamespace>
+    	<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    	<legacyModeNS>true</legacyModeNS>
+  	</plugin>
+	</gazebo>
+
+
+        <link name="lidar_link1">
+            <inertial>
+                <mass value="0.1" />
+                <origin xyz="0 0 0" />
+                <inertia ixx="0.01" ixy="0.0" ixz="0.0"
+                         iyy="0.01" iyz="0.0"
+                         izz="0.01" />
+            </inertial>
+
+            <visual>
+                <origin xyz=" 0 0 0 " rpy="0 0 0" />
+                <geometry>
+                    <cylinder length="0.05" radius="0.05"/>
+                </geometry>
+                <material name="black"/>
+            </visual>
+
+            <collision>
+                <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+                <geometry>
+                    <cylinder length="0.06" radius="0.05"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <gazebo reference="lidar_link1">
+            <material>Gazebo/Black</material>
+        </gazebo>
+
+	<joint
+	    name="lidar_joint1"
+	    type="fixed">
+	    <origin
+	      xyz="-0.8 1 0"
+	      rpy="0 0 0" />
+	    <parent
+	      link="base_link" />
+	    <child
+	      link="lidar_link1" />
+	</joint>
+
+        <gazebo reference="lidar_link1">
+            <sensor type="ray" name="rplidar">
+                <pose>0 0 0 0 0 0</pose>
+                <visualize>false</visualize>
+                <update_rate>40</update_rate>
+                <ray>
+                    <scan>
+                      <horizontal>
+                        <samples>360</samples>
+                        <resolution>1</resolution>
+                        <min_angle>0</min_angle>
+                        <max_angle>4.71</max_angle>
+                      </horizontal>
+                    </scan>
+                    <range>
+                      <min>0.10</min>
+                      <max>10</max>
+                      <resolution>0.01</resolution>
+                    </range>
+                    <noise>
+                      <type>gaussian</type>
+                      <mean>0.0</mean>
+                      <stddev>0.01</stddev>
+                    </noise>
+                </ray>
+                <plugin name="gazebo_rplidar" filename="libgazebo_ros_laser.so">
+                    <topicName>/scan</topicName>
+                    <frameName>lidar_link1</frameName>
+                </plugin>
+            </sensor>
+        </gazebo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</robot>

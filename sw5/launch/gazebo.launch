@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="world_name" default="sw5" />
+  <arg name="gui" default="true" />
+  <arg name="run_camera" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+  <node pkg="sw5" type="nav_sim.py" name="nav_sim_contral" />
+
+  <param name="robot_description" command="$(find xacro)/xacro '$(find sw5)/urdf/sw5.urdf'" />
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> 
+
+  <node name="racecar_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model sw5" />
+
+  <include file="$(find sw5)/launch/racecar_control.launch" ns="/"/>
+
+<node name="rviz" pkg="rviz" type="rviz" args="-d $(find sw5)/rviz/sw5.rviz" />
+
+</launch>
